@@ -13,7 +13,7 @@ export default function Header({
 
     return (
         <header onClick={onHeaderClick}>
-        <h1><a className="home" href="#">GamesPlay</a></h1>
+        <h1><a className="home" href="/home">GamesPlay</a></h1>
         <nav>
             <a href="/games">All games</a>
 

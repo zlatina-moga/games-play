@@ -3,7 +3,12 @@ import { useState, createElement } from "react";
 import Header from "./components/Header";
 import WelcomeWorld from "./components/WelcomeWorld";
 import CatalogGames from './components/CatalogGames';
-import CreateGame from './components/CreateGame'
+import CreateGame from './components/CreateGame';
+import Login from './components/Login';
+import Register from './components/Register';
+import ErrorPage from './components/ErrorPage'
+import EditGame from './components/EditGame';
+import GameDetails from './components/GameDetails';
 
 function App() {
     const [page, setPage] = useState('/home')
@@ -11,7 +16,9 @@ function App() {
     const routes = {
         '/home': <WelcomeWorld />,
         '/games': <CatalogGames />,
-        '/create-game': <CreateGame />
+        '/create-game': <CreateGame />,
+        '/login': <Login />,
+        '/register': <Register />
     }
 
     const navigationChangeHandler = (path) => {
@@ -25,7 +32,7 @@ function App() {
         />
 
         <main id="main-content">
-            {routes[page] || <h2>No page found</h2>}
+            {routes[page] || <ErrorPage />}
         </main>
 
     </div>
