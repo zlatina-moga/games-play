@@ -9,9 +9,9 @@ function App() {
     const [page, setPage] = useState('/home')
 
     const routes = {
-        '/home': WelcomeWorld,
-        '/games': CatalogGames,
-        '/create-game': CreateGame
+        '/home': <WelcomeWorld />,
+        '/games': <CatalogGames />,
+        '/create-game': <CreateGame />
     }
 
     const navigationChangeHandler = (path) => {
@@ -25,7 +25,7 @@ function App() {
         />
 
         <main id="main-content">
-            {createElement(routes[page]) || <h2>No page found</h2>}
+            {routes[page] || <h2>No page found</h2>}
         </main>
 
     </div>
