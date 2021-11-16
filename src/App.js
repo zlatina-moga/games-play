@@ -7,7 +7,6 @@ import CreateGame from './components/CreateGame';
 import Login from './components/Login';
 import Register from './components/Register';
 import ErrorPage from './components/ErrorPage'
-import EditGame from './components/EditGame';
 import GameDetails from './components/GameDetails';
 
 function App() {
@@ -24,8 +23,8 @@ function App() {
         let argument = pathNames[2];
 
         const routes = {
-            'home': <WelcomeWorld />,
-            'games': <CatalogGames  navigationChangeHandler={navigationChangeHandler}/>,
+            'home': <WelcomeWorld  navigationChangeHandler={navigationChangeHandler} />,
+            'games': <CatalogGames navigationChangeHandler={navigationChangeHandler}/>,
             'create-game': <CreateGame />,
             'login': <Login />,
             'register': <Register />,
