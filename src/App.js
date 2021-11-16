@@ -2,7 +2,7 @@ import { useState, createElement } from "react";
 
 import Header from "./components/Header";
 import WelcomeWorld from "./components/WelcomeWorld";
-import CatalogGames from './components/CatalogGames';
+import CatalogGames from './components/GameCatalog/CatalogGames';
 import CreateGame from './components/CreateGame';
 import Login from './components/Login';
 import Register from './components/Register';
