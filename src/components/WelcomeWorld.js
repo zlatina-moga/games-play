@@ -28,7 +28,11 @@ export default function WelcomeWorld({
 
             {
                 games.length > 0
-                    ? games.map(g => <LatestGameCard  navigationChangeHandler={navigationChangeHandler} game={g}/>)
+                    ? games.map(g => <LatestGameCard 
+                        key={g._id} 
+                        navigationChangeHandler={navigationChangeHandler} 
+                        game={g}
+                    />)
                     :  <p className="no-articles">No games yet</p>
             }
 
