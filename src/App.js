@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {Route} from 'react-router-dom'
 
 import Header from "./components/Header";
 import WelcomeWorld from "./components/WelcomeWorld";
@@ -42,7 +43,8 @@ function App() {
         />
 
         <main id="main-content">
-            {router(page) || <ErrorPage />}
+           <Route path= '/' exact component= {WelcomeWorld} />
+           <Route path= '/games' component={CatalogGames} />
         </main>
 
     </div>
