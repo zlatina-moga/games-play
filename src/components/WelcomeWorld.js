@@ -3,9 +3,7 @@ import * as gameService from '../services/gameService';
 import LatestGameCard from '../components/LatestGameCard'
 
 
-export default function WelcomeWorld({
-    navigationChangeHandler
-}) {
+export default function WelcomeWorld() {
     const [games, setGames] = useState([])
     useEffect(() => {
         gameService.getLatest()
@@ -29,8 +27,7 @@ export default function WelcomeWorld({
             {
                 games.length > 0
                     ? games.map(g => <LatestGameCard 
-                        key={g._id} 
-                        navigationChangeHandler={navigationChangeHandler} 
+                        key={g._id}
                         game={g}
                     />)
                     :  <p className="no-articles">No games yet</p>

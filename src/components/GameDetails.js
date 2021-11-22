@@ -3,11 +3,11 @@ import * as gameService from '../services/gameService';
 
 
 export default function GameDetails({
-    id
+    match
 }) {
-    const [game, setGame] = useState([]);
+    const [game, setGame] = useState({});
     useEffect(() => {
-        gameService.getOne(id)
+        gameService.getOne(match.params.gameId)
             .then(result => {
                 setGame(result)
             })

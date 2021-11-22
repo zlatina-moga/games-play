@@ -1,12 +1,8 @@
-export default function LatestGameCard({
-    game,
-    navigationChangeHandler
-}) {
-    const onDetailsClick = (e) => {
-        e.preventDefault()
-        navigationChangeHandler(`/details/${game._id}`)
-    }
+import {Link} from 'react-router-dom'
 
+export default function LatestGameCard({
+    game
+}) {
     return (
         <div className="game">
         <div className="image-wrap">
@@ -17,13 +13,12 @@ export default function LatestGameCard({
             <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
         </div>
         <div className="data-buttons">
-            <a  
-                href={`/details/${game._id}`} 
-                onClick={onDetailsClick}
+            <Link  
+                to ={`/games/${game._id}`} 
                 className="btn details-btn"
             >
                 Details
-            </a>
+            </Link>
         </div>
     </div>
     )
